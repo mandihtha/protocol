@@ -1,0 +1,14 @@
+{
+  "name": "@mandihtha/protocol",
+  "license": "MIT",
+  "version": "2026.1.0-alpha",
+  "description": "Mandihtha Protocol specification",
+  "files": [
+  ],
+  "scripts": {
+    "clean": "rm -rf website/build",
+    "build": "cd website && hugo",
+    "dev": "cd website && hugo server --buildDrafts"
+  },
+  "type": "module"
+}

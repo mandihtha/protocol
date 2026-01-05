@@ -1,0 +1,54 @@
+name: publish
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: # imperative button
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Check out protocol repo with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0 # get full history
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Build website (versioned)
+        run: bun run build
+
+      - name: Deploy to github.io
+        run: |
+          cd website/public
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "Deploy from protocol@${{ github.sha }}"
+            git push
+          fi
+
+      - name: Update submodule reference in protocol repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add website/public
+          if git diff --staged --quiet; then
+            echo "No submodule update needed"
+          else
+            git commit -m "Update website/public submodule reference"
+            git push
+          fi

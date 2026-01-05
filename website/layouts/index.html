@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>{{ .Site.Title }}</h1>
+<p>{{ .Site.Params.description }}</p>
+
+<h2>Specification</h2>
+<ul>
+  {{ range (where .Site.RegularPages "Section" "spec").ByWeight }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}

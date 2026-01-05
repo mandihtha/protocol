@@ -1,0 +1,37 @@
+baseURL = "https://mandihtha.github.io/"
+title = "Mandihtha Protocol"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "English"
+    languageCode = "en-us"
+  [languages.es]
+    weight = 3
+    languageName = "Español"
+    languageCode = "es"
+# Use relative URLs so versioned copies work
+relativeURLs = true
+
+publishDir = "build"
+
+[module]
+  # The conventional dir for markdown is ./content, but we can override this:
+  [[module.mounts]]
+    source = "../spec"
+    target = "content/spec"
+  [[module.mounts]]
+    source = "../rfcs"
+    target = "content/rfcs"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+[params]
+  description = "Mandihtha Protocol specification"
