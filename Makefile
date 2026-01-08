@@ -1,13 +1,13 @@
 default: clean build dev
 
 build:
-	bun run build
+	pnpm run build
 
 clean:
-	bun run clean
+	pnpm run clean
 
 dev:
-	bun run dev
+	pnpm run dev
 
 .PHONY: build dev clean
 

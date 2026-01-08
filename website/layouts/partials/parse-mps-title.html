@@ -1,0 +1,3 @@
+{{- $code := index (split . ": ") 0 -}}
+{{- $name := strings.TrimPrefix (printf "%s: " $code) . -}}
+{{- return dict "code" $code "name" $name -}}

@@ -32,6 +32,9 @@ publishDir = "build"
   [[module.mounts]]
     source = "static"
     target = "static"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
 
 [params]
   description = "Mandihtha Protocol specification"
