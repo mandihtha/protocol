@@ -36,12 +36,13 @@
       <div class="content">
         <!-- Page icon -->
         {{ with .Params.icon }}
-        <div
+        <a
+          href="/en/spec"
           class="page-icon"
           style="background-color: {{ $.Params.iconBg | default "#e0e0e0" }};"
         >
           <span>{{ . }}</span>
-        </div>
+        </a>
         {{ end }}
         <!-- Page title / lede -->
         <h1>{{ .Title }}</h1>
