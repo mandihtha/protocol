@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "clean": "rm -rf website/build",
-    "build": "cd website && hugo",
+    "build": "cd website && hugo && rsync -a --delete --exclude='.git' build/ public/",
     "dev": "cd website && hugo server --buildDrafts"
   },
   "type": "module"
