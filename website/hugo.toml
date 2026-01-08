@@ -4,6 +4,10 @@ title = "Mandihtha Protocol"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
+# Use relative URLs so versioned copies work
+relativeURLs = true
+publishDir = "build"
+
 [languages]
   [languages.en]
     weight = 1
@@ -13,10 +17,6 @@ defaultContentLanguageInSubdir = true
     weight = 3
     languageName = "Español"
     languageCode = "es"
-# Use relative URLs so versioned copies work
-relativeURLs = true
-
-publishDir = "build"
 
 [module]
   # The conventional dir for markdown is ./content, but we can override this:
