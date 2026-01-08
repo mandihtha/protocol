@@ -1,85 +1,125 @@
 {{ define "main" }}
+<div class="spec-layout">
 
-<section class="">
-  <div class="content">
-
-    <!-- Heading / intro -->
-
-    {{ with .Params.icon }}
-    <div
-      class="page-icon"
-      style="background-color: {{ $.Params.iconBg | default "#e0e0e0" }};"
-    >
-      <span>
-        {{ . }}
-      </span>
-    </div>
-    {{ end }}
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-
-    <!-- ToC -->
-
+  <!-- Sidebar TOC -->
+  <aside class="spec-sidebar">
     <nav>
-      <h2 id="spec-contents">Contents</h2>
       {{ range $section := sort .Site.Data.sections "weight" }}
         {{ $sectionPages := where $.Pages "Params.section" $section.key }}
         {{ if $sectionPages }}
-        <h3><a href="#section-{{ $section.key }}">{{ $section.title }}</a></h3>
-        <ul>
-          {{ range sort $sectionPages "File.BaseFileName" }}
-          {{ $t := partial "parse-mps-title" .Title }}
-          <li>
-            <a href="#{{ .File.BaseFileName }}">
-              <span class="toc-left">
+        <details>
+          <summary>
+            <a href="#section-{{ $section.key }}">{{ $section.title }}</a>
+          </summary>
+          <ul>
+            {{ range sort $sectionPages "File.BaseFileName" }}
+            {{ $t := partial "parse-mps-title" .Title }}
+            <li>
+              <a href="#{{ .File.BaseFileName }}">
                 <span class="toc-icon">{{ $section.icon }}</span>
                 <span class="toc-name">{{ $t.name }}</span>
-              </span>
-              <span class="toc-code">{{ $t.code }}</span>
-            </a>
-          </li>
-          {{ end }}
-        </ul>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </details>
         {{ end }}
       {{ end }}
     </nav>
+  </aside>
+
+  <!-- Main content -->
+  <div class="spec-main">
+
+    <!-- Header / intro -->
+    <section class="">
+      <div class="content">
+        <!-- Page icon -->
+        {{ with .Params.icon }}
+        <div
+          class="page-icon"
+          style="background-color: {{ $.Params.iconBg | default "#e0e0e0" }};"
+        >
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        <!-- Page title / lede -->
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+
+        <!-- Content TOC -->
+        <nav>
+          {{ range $section := sort .Site.Data.sections "weight" }}
+            {{ $sectionPages := where $.Pages "Params.section" $section.key }}
+            {{ if $sectionPages }}
+            <h3>
+              <a href="#section-{{ $section.key }}">{{ $section.title }}</a>
+            </h3>
+            <ul>
+              {{ range sort $sectionPages "File.BaseFileName" }}
+              {{ $t := partial "parse-mps-title" .Title }}
+              <li>
+                <a href="#{{ .File.BaseFileName }}">
+                  <span class="toc-left">
+                    <span class="toc-icon">{{ $section.icon }}</span>
+                    <span class="toc-name">{{ $t.name }}</span>
+                  </span>
+                  <span class="toc-code">{{ $t.code }}</span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          {{ end }}
+        </nav>
+      </div>
+    </section>
+    <!-- /Heading -->
+
+    <!-- All content (single long page with #anchor tags) -->
+    {{ range $section := sort .Site.Data.sections "weight" }}
+      {{ $sectionPages := where $.Pages "Params.section" $section.key }}
+      {{ if $sectionPages }}
+      <section style="background-color: {{ $section.bg }};">
+        <div
+          class="content"
+          id="section-{{ $section.key }}"
+          style="color: {{ $section.fg }};"
+        >
+
+          <!-- Section heading -->
+          <div
+            class="page-icon{{ with $section.icon2 }} page-icon-dual{{ end }}"
+            style="background-color: {{ $section.iconBg | default "#e0e0e0" }};"
+          >
+            <a
+              href="#section-{{ $section.key }}"
+              class="icon-primary"
+              style="top: {{ $section.iconOpticalAdjustment }}; text-decoration: none;"
+            >
+              {{ $section.icon }}
+            </a>
+          </div>
+          <h2>
+            {{ $section.title }}
+          </h2>
+
+          <!-- Articles -->
+          {{ range sort $sectionPages "File.BaseFileName" }}
+          <article id="{{ .File.BaseFileName }}">
+            {{ .Content }}
+          </article>
+          {{ end }}
+
+        </div>
+      </section>
+      {{ end }}
+    {{ end }}
 
   </div>
-</section>
 
-<!-- All content (single long page with #anchor tags) -->
+  <!-- Right sidebar (empty) -->
+  <aside class="spec-sidebar spec-sidebar-right"></aside>
 
-{{ range $section := sort .Site.Data.sections "weight" }}
-  {{ $sectionPages := where $.Pages "Params.section" $section.key }}
-  {{ if $sectionPages }}
-  <section style="background-color: {{ $section.bg }};">
-    <div class="content" id="section-{{ $section.key }}" style="color: {{ $section.fg }};">
-
-      <!-- Section heading -->
-      <div
-        class="page-icon{{ with $section.icon2 }} page-icon-dual{{ end }}"
-        style="background-color: {{ $section.iconBg | default "#e0e0e0" }};"
-      >
-        <a href="#section-{{ $section.key }}" class="icon-primary" style="top: {{ $section.iconOpticalAdjustment }}; text-decoration: none;">
-          {{ $section.icon }}
-        </a>
-        {{ with $section.icon2 }}
-        <span class="icon-secondary">{{ . }}</span>
-        {{ end }}
-      </div>
-      <h2>
-        {{ $section.title }}
-      </h2>
-
-      {{ range sort $sectionPages "File.BaseFileName" }}
-      <article id="{{ .File.BaseFileName }}">
-        {{ .Content }}
-      </article>
-      {{ end }}
-
-    </div>
-  </section>
-  {{ end }}
-{{ end }}
-
+</div>
 {{ end }}
