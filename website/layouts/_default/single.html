@@ -1,16 +1,6 @@
 {{ define "main" }}
-{{ if .Translations }}
-<nav class="lang-switcher">
-  <a href="{{ .RelPermalink }}" aria-current="page">{{ .Lang }}</a>
-  {{ range .Translations }}
-  <a href="{{ .RelPermalink }}">{{ .Lang }}</a>
-  {{ end }}
-</nav>
-{{ end }}
 <article>
-  {{ with $.Params.icon }}
-  <div class="page-icon" style="background-color: {{ $.Params.iconBg | default "#e0e0e0" }};">{{ . }}</div>
-  {{ end }}
+  <h1>{{ .Title }}</h1>
   {{ .Content }}
 </article>
 {{ end }}
