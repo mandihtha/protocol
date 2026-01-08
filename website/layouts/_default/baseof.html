@@ -3,7 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <!-- Page title: use htmlTitle param if set, otherwise fall back to .Title -->
+  <title>
+    {{- if .IsHome -}}
+      {{ .Site.Title }}
+    {{- else -}}
+      {{ with .Params.htmlTitle }}{{ . }}{{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}
+    {{- end -}}
+  </title>
   <meta name="description" content="{{ .Site.Params.description }}">
 
   <!-- Favicon -->

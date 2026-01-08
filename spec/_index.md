@@ -1,5 +1,5 @@
 ---
-title: "Specification"
+htmlTitle: "Specification"
 icon: "⚖️"
 iconBg: "#fcf9ff"
 ---
