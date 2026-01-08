@@ -1,4 +1,5 @@
 ---
+title: "Specification"
 icon: "⚖️"
 iconBg: "#fcf9ff"
 ---
