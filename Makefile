@@ -1,5 +1,8 @@
 default: clean build dev
 
+install:
+	pnpm install --ignore-workspace
+
 build:
 	pnpm run build
 
@@ -9,5 +12,8 @@ clean:
 dev:
 	pnpm run dev
 
-.PHONY: build dev clean
+format:
+	pnpm run format:md
+
+.PHONY: install build dev clean format
 
