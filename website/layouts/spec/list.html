@@ -4,7 +4,7 @@
   <!-- Sidebar TOC -->
   <aside class="spec-sidebar">
     <nav>
-      {{ range $section := sort .Site.Data.sections "weight" }}
+      {{ range $section := sort hugo.Data.sections "weight" }}
         {{ $sectionPages := where $.Pages "Params.section" $section.key }}
         {{ if $sectionPages }}
         <details>
@@ -50,7 +50,7 @@
 
         <!-- Content TOC -->
         <nav>
-          {{ range $section := sort .Site.Data.sections "weight" }}
+          {{ range $section := sort hugo.Data.sections "weight" }}
             {{ $sectionPages := where $.Pages "Params.section" $section.key }}
             {{ if $sectionPages }}
             <h3>
@@ -78,7 +78,7 @@
     <!-- /Heading -->
 
     <!-- All content (single long page with #anchor tags) -->
-    {{ range $section := sort .Site.Data.sections "weight" }}
+    {{ range $section := sort hugo.Data.sections "weight" }}
       {{ $sectionPages := where $.Pages "Params.section" $section.key }}
       {{ if $sectionPages }}
       <section style="background-color: {{ $section.bg }};">
