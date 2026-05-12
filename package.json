@@ -9,7 +9,11 @@
   "scripts": {
     "clean": "rm -rf website/build",
     "build": "cd website && hugo && rsync -a --delete --exclude='.git' build/ public/",
-    "dev": "cd website && hugo server --buildDrafts --port 16293"
+    "dev": "cd website && hugo server --buildDrafts --port 16293",
+    "format:md": "prettier --write 'spec/*.md'"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
 }
