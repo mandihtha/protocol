@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
 
-
     steps:
       - name: Check out protocol repo with submodules
         uses: actions/checkout@v5

@@ -15,5 +15,5 @@ dev:
 format:
 	pnpm run format:md
 
-.PHONY: install build dev clean format
+.PHONY: default install build dev clean format
 

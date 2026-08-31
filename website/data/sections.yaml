@@ -1,136 +1,136 @@
 - key: overview
-  title: "Overview"
-  bg: "#9fcc6a33"
-  icon: "🏔️"
-  iconBg: "#fff"
-  iconOpticalAdjustment: "-6%"
-  fg: "#111111ee"
+  title: 'Overview'
+  bg: '#9fcc6a33'
+  icon: '🏔️'
+  iconBg: '#fff'
+  iconOpticalAdjustment: '-6%'
+  fg: '#111111ee'
   weight: 0
 
 - key: system
-  title: "System"
-  bg: "#bbbcbf55"
-  icon: "🖥️"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'System'
+  bg: '#bbbcbf55'
+  icon: '🖥️'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 1
 
 - key: identity
-  title: "Identity"
-  bg: "#3a32c722"
-  icon: "🫆"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Identity'
+  bg: '#3a32c722'
+  icon: '🫆'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 2
 
 - key: content
-  title: "Content"
-  bg: "#fff"
-  icon: "📓"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Content'
+  bg: '#fff'
+  icon: '📓'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 3
 
 - key: contacts
-  title: "Contacts"
-  bg: "#f6cf0a27"
-  icon: "📇"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Contacts'
+  bg: '#f6cf0a27'
+  icon: '📇'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 4
 
 - key: networking
-  title: "Networking"
-  bg: "#055df21b"
-  icon: "🛜"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Networking'
+  bg: '#055df21b'
+  icon: '🛜'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 5
 
 - key: sync
-  title: "Sync"
-  bg: "#7f99b744"
-  icon: "🔄"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Sync'
+  bg: '#7f99b744'
+  icon: '🔄'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 6
 
 - key: connections
-  title: "Connections"
-  bg: "#f6cf0a27"
-  icon: "🤝"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Connections'
+  bg: '#f6cf0a27'
+  icon: '🤝'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 7
 
 - key: sessions
-  title: "Sessions"
-  bg: "#fff"
-  icon: "📞"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Sessions'
+  bg: '#fff'
+  icon: '📞'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 8
 
 - key: messaging
-  title: "Messaging"
-  bg: "#fff"
-  icon: "💬"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Messaging'
+  bg: '#fff'
+  icon: '💬'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 9
 
 - key: syndication
-  title: "Syndication"
-  bg: "#bbbcbf55"
-  icon: "🗞️"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Syndication'
+  bg: '#bbbcbf55'
+  icon: '🗞️'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 10
 
 - key: publication
-  title: "Publication"
-  bg: "#bbbcbf55"
-  icon: "📰"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Publication'
+  bg: '#bbbcbf55'
+  icon: '📰'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 11
 
 - key: accounts
-  title: "Accounts"
-  bg: "#e2dabd55"
-  icon: "🏛️"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Accounts'
+  bg: '#e2dabd55'
+  icon: '🏛️'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 12
 
 - key: backup
-  title: "Backup"
-  bg: "#87ceeb55"
-  icon: "☁️"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Backup'
+  bg: '#87ceeb55'
+  icon: '☁️'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 13
 
 - key: recovery
-  title: "Recovery"
-  bg: "#dc26261f"
-  icon: "⛑️"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Recovery'
+  bg: '#dc26261f'
+  icon: '⛑️'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 14
 
 - key: interoperability
-  title: "Interoperability"
-  bg: "#fcf9ff"
-  icon: "🔌"
-  iconBg: "#fff"
-  fg: "#111111ee"
+  title: 'Interoperability'
+  bg: '#fcf9ff'
+  icon: '🔌'
+  iconBg: '#fff'
+  fg: '#111111ee'
   weight: 15
 
 - key: appendices
-  title: "Appendices"
-  bg: "#fff"
-  icon: "📎"
-  iconBg: "#fcf9ff"
-  fg: "#111111ee"
+  title: 'Appendices'
+  bg: '#fff'
+  icon: '📎'
+  iconBg: '#fcf9ff'
+  fg: '#111111ee'
   weight: 90
